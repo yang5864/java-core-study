@@ -6,12 +6,12 @@ public class TargetNumber {
     }
 
     private int dfs(int[] numbers, int target, int idx, int sum) {
-        // 전부 다 돌은 경우0
+        // 전부 다 돌은 경우
         if (idx == numbers.length) {
             return sum == target ? 1 : 0;
         }
 
-        // 더하는 경우와 빼는 경우의 수 각가 더해준다
+        // 더하는 경우와 빼는 경우의 수 각각 더해준다
         return dfs(numbers, target, idx + 1, sum + numbers[idx]) + dfs(numbers, target, idx + 1, sum - numbers[idx]);
     }
 }
